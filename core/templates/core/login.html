@@ -1,0 +1,42 @@
+{% extends "core/base.html" %}
+
+{% block title %}Iniciar sesión en{% endblock %}
+
+{% load static %}
+
+{% block content %}
+<body class="login">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 order-md-2 mb-4">
+        <div class="joinsteam container">
+          <div class="signup-join subtext">
+            Únete a not Steam y descubre miles de títulos para jugar.
+          </div>
+          <img alt="Join Steam" class="signup-join" src="https://store.cloudflare.steamstatic.com/public/shared/images/login/join_pc.png?v=1">
+          <a class="btn btn-dark my-2" href="{% url 'registro' %}">Registrarse</a>
+        </div>
+      </div>
+      <div class="col-md-8 order-md-1">
+        <form class="form-signin">
+          <div class="login-title">Iniciar sesión</div>
+          <div class="input_title">Nombre de la cuenta de not Steam</div>
+          <input id="input_username" class="text-field" type="text" placeholder="" required="" autofocus="">
+          <hr class="mb-1">
+          <div class="input_title">Contraseña</div>
+          <input id="input_password" class="text-field" type="password" placeholder="" required="">
+          <hr class="mb-2">
+          <div class="checkbox mb-3">
+            <label id="checkbox-text">
+              <input type="checkbox" value="remember-me">
+              Recordar contraseña en este equipo
+            </label>
+          </div>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar sesión</button>
+          <p class="mt-5 mb-3">notSTEAM© 2021-2022</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+{% endblock %}

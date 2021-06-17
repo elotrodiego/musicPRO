@@ -1,0 +1,69 @@
+{% extends "core/base.html" %}
+
+{% block title %}{{ juego.nombre_juego }} en{% endblock %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+<div class="post-slider text-white">
+    <div id="gamedetails" class="gamepage container">
+        <div id="gamecarousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="false">
+            
+            
+            <a>{{ juego.nombre_juego }}</a>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="img-fluid" src="{{ juego.carousel.url }}" alt="gc1">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="img-fluid" src="{{ juego.carousel2.url }}" alt="gc2">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="img-fluid" src="{{ juego.carousel3.url }}" alt="gc3">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="img-fluid" src="{{ juego.carousel4.url }}" alt="gc4">
+                        </div>
+                        
+                        <a class="carousel-control-prev" href="#gamecarousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Anterior</span>
+                        </a>
+                        <a class="carousel-control-next" href="#gamecarousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Siguiente</span>
+                        </a>
+                        
+                    </div>
+                    <ol class="carousel-indicators">
+                        <li data-target="#gamecarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#gamecarousel" data-slide-to="1"></li>
+                        <li data-target="#gamecarousel" data-slide-to="2"></li>
+                        <li data-target="#gamecarousel" data-slide-to="3"></li>
+                    </ol>
+                    
+                </div>
+                <div class="col-md-6">
+                    <img id="gameheader" class="img-fluid" src="{{ juego.imagen_juego.url }}" alt="{ juego.nombre_juego }">
+                    <p>{{ juego.desc_juego }}</p>
+                    <p>
+                        <span class="gameinfo-title">Fecha de lanzamiento:</span>{{ juego.fecha_juego }}<br/>
+                        <span class="gameinfo-title">Desarrollador:</span>{{ juego.desarrollador_juego }}<br/>
+                        <span class="gameinfo-title">Editor:</span>{{ juego.editor_juego }}<br/>
+                        <span class="badge badge-secondary">{{ juego.genero_juego }}</span>
+                        <span class="badge badge-secondary">{{ juego.genero_juego2 }}</span>
+                        <span class="badge badge-secondary">{{ juego.genero_juego3 }}</span>
+                        <span class="badge badge-secondary">{{ juego.genero_juego4 }}</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
