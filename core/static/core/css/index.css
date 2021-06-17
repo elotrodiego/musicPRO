@@ -10,7 +10,7 @@ body {
     background-color: #1e1e48;
 }
 
-.barrita {
+.barrita.navbar {
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 15px;
     color: #b8b6b4;
