@@ -10,6 +10,10 @@ body {
     background-color: #1e1e48;
 }
 
+footer {
+    padding-top: 100px;
+}
+
 .navbar-brand {
     margin-right: 4%;
 }
@@ -234,6 +238,42 @@ body {
 .buygame .btn {
     margin-bottom: 2px;
 }
+
+/*PANEL ADMIN*/
+.paneladmin .btn-group {
+    display: flex;
+}
+
+#btn-agregar {
+    display: inline-flex;
+    margin-bottom: 30px;
+    margin-left: 2px;
+}
+
+/* ADDGAME */
+.addgame h1{
+    padding-top: 30px;
+    padding-bottom: 20px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 20px;
+    color: #b8b6b4;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.addgame{
+    background-color: #12122b62;
+    margin: auto;
+    width: 60%;
+    padding-top: 3px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 16px;
+    color: #b8b6b4;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+
 
 /*CONTACTO*/
 .contacto label {

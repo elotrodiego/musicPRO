@@ -1,0 +1,53 @@
+{% extends "core/base.html" %}
+
+{% block title %}Panel Administrador de{% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="album py-5">
+    <div class="container paneladmin">
+        <h1 class="titulo"> Lista de todos los juegos</h1>
+        </br>
+        <div class="btn-group" id="btn-agregar">
+            <a href="{% url 'add_game' %}" class="btn btn-sm btn-outline-success">
+              <span class="glyphicon glyphicon-th-list">Agregar Juego</span> 
+            </a>
+        </div>
+        </br>
+        <div class="row">
+            {% for i in juegos %}
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <a href="{% url 'gamepage' i.id_juego %}">
+                            <img class="img-fluid" src="{{ i.imagen_juego.url }}" alt="{{ i.nombre_juego }}">
+                        </a>
+                        <div class="card-body">
+                            <p>{{ i.nombre_juego }}<br>
+                                <span class="badge badge-secondary">{{ i.genero_juego }}</span>
+                                <span class="badge badge-secondary">{{ i.genero_juego2 }}</span>
+                                <span class="badge badge-secondary">{{ i.genero_juego3 }}</span>
+                                <span class="badge badge-secondary">{{ i.genero_juego4 }}</span>
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">{{ i.desarrollador_juego }}</small>
+                            </div>
+                            <br>
+                            <div class="btn-group" id="btn-editar">
+                                <a href="{% url 'edit_game' i.id_juego %}" class="btn btn-sm btn-outline-warning">
+                                  <span class="glyphicon glyphicon-th-list">Editar</span> 
+                                </a>   
+                                <a href="{% url 'delete_game' i.id_juego %}" class="btn btn-sm btn-outline-danger">
+                                    <span class="glyphicon glyphicon-th-list">Eliminar</span> 
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
