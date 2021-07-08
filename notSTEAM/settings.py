@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-h)%s3w^d4l@#*^!j^w!)94m-052@lac@!-6(&$^rpqd+eerr6p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['elotrodiego.pythonanywhere.com']
+ALLOWED_HOSTS = ['elotrodiego.pythonanywhere.com','127.0.0.1']
 
 
 # Application definition
@@ -38,8 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-    'core',
     'crispy_forms',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'core',
+    'api_juegos',       
 ]
 
 MIDDLEWARE = [
@@ -51,6 +54,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}
 
 ROOT_URLCONF = 'notSTEAM.urls'
 
