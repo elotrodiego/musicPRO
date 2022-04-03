@@ -1,6 +1,23 @@
 from django.db import models
 from django.db.models.fields import IntegerField
 
+#MUSICPRO
+
+class Producto(models.Model):
+    id_producto = models.IntegerField(primary_key=True, verbose_name="id producto")
+    nombre_producto = models.CharField(max_length=128, verbose_name="nombre producto")
+    tipo_producto = models.CharField(max_length=128, verbose_name="tipo producto")
+    marca_producto = models.CharField(max_length=128, verbose_name="marca producto")
+    desc_producto = models.CharField(max_length=700, verbose_name="descripcion producto", default="none")
+    precio_producto = models.IntegerField(verbose_name="precio producto")
+    imagen_producto = models.ImageField(verbose_name="imagen producto", default='static/core/img/default.png', upload_to='core')
+    carousel = models.ImageField(verbose_name="carousel1", default='/core/default.jpg', upload_to='core')
+    carousel2 = models.ImageField(verbose_name="carousel2", default='/core/default.jpg', upload_to='core')
+    carousel3 = models.ImageField(verbose_name="carousel3", default='core/default.jpg', upload_to='core')
+    carousel4 = models.ImageField(verbose_name="carousel4", default='core/default.jpg', upload_to='core')
+
+
+# NOTSTEAM
 
 # Create your models here.
 class Genero(models.Model):
